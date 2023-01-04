@@ -1,4 +1,4 @@
-package com.http.connection.proxy.instance;
+package com.http.connection.net.proxy.instance;
 
 import org.apache.http.HttpHost;
 import org.apache.http.impl.client.CloseableHttpClient;

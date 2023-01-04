@@ -1,4 +1,4 @@
-package com.http.connection.proxy.instance;
+package com.http.connection.net.proxy.instance;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
