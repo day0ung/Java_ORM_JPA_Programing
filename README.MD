@@ -26,4 +26,24 @@ JPA어노테이션을 활용하여 엔티티 클래스를 정의 - DB구조와 �
 ## EntityManagerFactory
 EntityManager를 생성하기 위한 팩토리 인터페이스로 persistence 단위별로 팩토리를 생성
 
+## TypedQuery
+JPA(Java Persistence API)에서 TypedQuery는 실행 결과를 타입 안정성(type-safe)을 보장하는 쿼리를 생성하는 인터페이스  
+
+일반적인 JPQL(Java Persistence Query Language) 쿼리를 생성하는 것과 비슷하지만, TypedQuery는 반환되는 결과를 쿼리 실행 전에 정의된 엔티티 타입으로 지정할 수 있으며, 이를 통해 실행 결과의 타입 안정성을 보장할 수 있다.
+
+* TypedQuery를 사용하여 Book 엔티티를 조회하는 코드
+```java
+TypedQuery<Book> query = em.createQuery(
+  "SELECT b FROM Book b WHERE b.author = :author", Book.class);
+query.setParameter("author", "J.K. Rowling");
+List<Book> books = query.getResultList();
+```
+> 위의 코드에서 em은 엔티티 매니저(Entity Manager)를 나타내며, Book은 반환되는 결과의 엔티티 타입을 지정한 것이다.  
+> getResultList() 메소드를 호출하면, 쿼리 결과로 Book 엔티티의 리스트가 반환
+> TypedQuery를 사용하면, 반환되는 결과를 정확하게 타입 캐스팅할 수 있기 때문에, 불필요한 타입 체크를 방지할 수 있으며, 코드 가독성과 유지 보수성을 향상시킬 수 있다.
+
+
+
+
+
 

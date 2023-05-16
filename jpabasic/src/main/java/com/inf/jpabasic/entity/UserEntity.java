@@ -42,8 +42,18 @@ public class UserEntity {
         this.updatedAt = updatedAt;
     }
 
+    //JPA 규약으로 기본 생성자를 제공해야함
     public UserEntity(){
 
+    }
+
+    public void changeName(String newName){
+        this.name = newName;
+        updateDateTime();
+    }
+
+    private void updateDateTime(){
+        this.updatedAt = LocalDateTime.now();
     }
 }
 
