@@ -11,7 +11,7 @@ public class CEntityManagerFactory {
      * EntityManagerFactory는 EntityManager를 생성하기 위한 팩토리 인터페이스로 persistence 단위별로 팩토리를 생성
      */
     public static void initialization(){
-        entityManagerFactory = Persistence.createEntityManagerFactory("entity_manager_factory");
+        entityManagerFactory = Persistence.createEntityManagerFactory("basicjpa");
     }
 
     /**
